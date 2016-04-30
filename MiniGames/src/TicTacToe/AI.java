@@ -32,7 +32,7 @@ public class AI extends Main {
         for (int i = 0; i < 3; i++) {
             // Checking if a win exists in the Horizontal Direction
             if ((b.getBoard()[i][0] + b.getBoard()[i][1] + b.getBoard()[i][2]) == b.getWhosMove()*2) {
-            	System.out.println("h" + i);
+            	
                 if (b.getBoard()[i][0] == 0) {
                     b.setSquare(i,0,b.getWhosMove());
                 }
@@ -46,7 +46,7 @@ public class AI extends Main {
             }
             // Checking if a win exists in the Vertical Direction
             if ((b.getBoard()[0][i] + b.getBoard()[1][i] + b.getBoard()[2][i]) == b.getWhosMove()*2) {
-            	System.out.println("v" + i);
+            	
                 if (b.getBoard()[0][i] == 0) {
                     b.setSquare(0,i,b.getWhosMove());
                 }
@@ -61,7 +61,7 @@ public class AI extends Main {
         }
         // Checking if a win exists in the Diagonal direction
         if ((b.getBoard()[0][0] + b.getBoard()[1][1] + b.getBoard()[2][2]) == b.getWhosMove()*2) {
-        	System.out.println("d1");
+        	
             if (b.getBoard()[0][0] == 0) {
                 b.setSquare(0,0,b.getWhosMove());
             }
@@ -74,7 +74,7 @@ public class AI extends Main {
             return true;
         }
         if ((b.getBoard()[0][2] + b.getBoard()[1][1] + b.getBoard()[2][0]) == b.getWhosMove()*2) {
-        	System.out.println("d2");
+        	
             if (b.getBoard()[0][2] == 0) {
                 b.setSquare(0,2,b.getWhosMove());
             }
@@ -98,7 +98,7 @@ public class AI extends Main {
         for (int i = 0; i < 3; i++) {
             // Checking if a win exists in the Horizontal Direction
             if ((b.getBoard()[i][0] + b.getBoard()[i][1] + b.getBoard()[i][2]) == (((b.getWhosMove() + 2) % 4)*2)) {
-            	System.out.println("h" + i);
+            	
                 if (b.getBoard()[i][0] == 0) {
                     b.setSquare(i,0,b.getWhosMove());
                 }
@@ -112,7 +112,7 @@ public class AI extends Main {
             }
             // Checking if a win exists in the Vertical Direction
             if ((b.getBoard()[0][i] + b.getBoard()[1][i] + b.getBoard()[2][i]) == (((b.getWhosMove() + 2) % 4)*2)) {
-            	System.out.println("h" + i);
+            	
                 if (b.getBoard()[0][i] == 0) {
                     b.setSquare(0,i,b.getWhosMove());
                 }
@@ -127,7 +127,7 @@ public class AI extends Main {
         }
         // Checking if a win exists in the Diagonal direction
         if ((b.getBoard()[0][0] + b.getBoard()[1][1] + b.getBoard()[2][2]) == (((b.getWhosMove() + 2) % 4)*2)) {
-        	System.out.println("d1");
+        	
             if (b.getBoard()[0][0] == 0) {
                 b.setSquare(0,0,b.getWhosMove());
             }
@@ -140,7 +140,7 @@ public class AI extends Main {
             return true;
         }
         if ((b.getBoard()[0][2] + b.getBoard()[1][1] + b.getBoard()[2][0]) == (((b.getWhosMove() + 2) % 4)*2)) {
-        	System.out.println("d2");
+        	
             if (b.getBoard()[0][2] == 0) {
                 b.setSquare(0,2,b.getWhosMove());
             }
