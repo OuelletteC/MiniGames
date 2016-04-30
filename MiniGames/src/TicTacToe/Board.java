@@ -1,9 +1,12 @@
 package TicTacToe;
 
-class Board extends Main {
+class Board {
 
     // 3x3 TicTacToe board where 0 represents empty, 1 represent X, 2 represents O
     private int board[][] = new int[3][3];
+    
+    private boolean gameOver = false;
+    private int whosMove = 1;
 
     Board() {
         createBoard();
@@ -18,10 +21,6 @@ class Board extends Main {
         }
     }
 
-    public int[][] getBoard() {
-        return board;
-    }
-
     // Takes the coordinates and enters 1 or 3 representing X or O
     public boolean setSquare(int X, int Y, int value) {
         if (X >= 0 && X <= 2) {
@@ -29,7 +28,11 @@ class Board extends Main {
                 if (this.board[X][Y] == 0) {
                     if (value == 1 || value == 3) {
                         this.board[X][Y] = value;
-                        whosMove = (whosMove + 2) % 4;
+                                          
+                        
+                        
+                        this.whosMove = (this.whosMove + 2) % 4;
+                        
                         return true;
                     }
                     else {
@@ -72,7 +75,24 @@ class Board extends Main {
             }
             s = s + "\n";
         }
+        
         return s;
+    }
+    
+    public int[][] getBoard() {
+        return board;
+    }
+    
+    public int getWhosMove() {
+    	return this.whosMove;
+    }
+    
+    public boolean getGameOver() {
+    	return this.gameOver;
+    }
+    
+    public void setGameOver(boolean status) {
+    	this.gameOver = status;
     }
 
 

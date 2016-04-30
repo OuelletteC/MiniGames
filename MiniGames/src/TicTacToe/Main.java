@@ -1,21 +1,18 @@
 package TicTacToe;
 
-public class Main extends GUI {
+public class Main {
 
-    public static Board b = new Board();
+    static Board b = new Board();
     final static int x = 1;
     final static int o = 3;
 
-    static boolean gameOver = false;
-    int whosMove = 1;
+    
 
     public static enum Player {
     	X,O
     }
 
     public static void main(String[] args){
-
-
 
         // Test Game
         /*
@@ -31,34 +28,36 @@ public class Main extends GUI {
         System.out.println(b.toString());
         */
 
-    	/*
-        int moves = 0;
-        while ((!gameOver) && moves < 9) {
-            AI aiMove = new AI();
+        //int aiMove = getAIMove(b, 1);
+
+        //launch(args);
+    	
+    	int moves = 0;
+        while ((!b.getGameOver()) && moves < 9) {
+            new AI();
             System.out.println(b.toString());
             moves++;
         }
-
-        if ((whosMove == 1) && (gameOver)) {
+        
+        if ((b.getWhosMove() == 1) && (b.getGameOver() == true)) {
             System.out.println("O Wins!!!!!!!!!");
         }
-        else if ((whosMove == 3) && (gameOver)) {
+        else if ((b.getWhosMove() == 3) && (b.getGameOver() == true)) {
             System.out.println("X Wins!!!!!!!!!");
         }
         else {
             System.out.println("It's a Draw");
         }
-        */
-
-
-        //int aiMove = getAIMove(b, 1);
-
-        launch(args);
+    	
 
     }
-
-    public int getWhosMove() {
-    	return whosMove;
+    
+    public void playGame() {
+    	
+    	
+        
     }
+
+    
 
 }
